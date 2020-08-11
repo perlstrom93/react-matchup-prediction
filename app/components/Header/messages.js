@@ -12,8 +12,24 @@ export default defineMessages({
     id: `${scope}.home`,
     defaultMessage: 'Home',
   },
-  features: {
-    id: `${scope}.features`,
-    defaultMessage: 'Features',
+  activeMatchup: {
+    id: `${scope}.activeMatchup`,
+    defaultMessage: 'Active Matchup',
+  },
+  setMatchup: {
+    id: `${scope}.setMatchup`,
+    defaultMessage: 'Set Matchup',
+  },
+  resolveMatchup: {
+    id: `${scope}.resolveMatchup`,
+    defaultMessage: 'Resolve Matchup',
+  },
+  leaderboard: {
+    id: `${scope}.leaderboard`,
+    defaultMessage: 'Leaderboard',
+  },
+  history: {
+    id: `${scope}.history`,
+    defaultMessage: 'History',
   },
 });

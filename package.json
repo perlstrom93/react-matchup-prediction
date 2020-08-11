@@ -1,16 +1,16 @@
 {
-  "name": "react-boilerplate",
-  "version": "4.0.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "matchup-predictor",
+  "version": "0.0.1",
+  "description": "React app to set and predict matchups",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "https://github.com/perlstrom93/react-matchup-prediction"
   },
   "engines": {
     "npm": ">=5",
     "node": ">=8.15.1"
   },
-  "author": "Max Stoiber",
+  "author": "Adam Perlstrom",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
@@ -59,7 +59,6 @@
       "git add --force"
     ]
   },
-  "pre-commit": "lint:staged",
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
   },

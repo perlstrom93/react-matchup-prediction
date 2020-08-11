@@ -19,12 +19,15 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
+import Registration from 'containers/Registration';
+import Signin from 'containers/Signin';
 import H2 from 'components/H2';
 import ReposList from 'components/ReposList';
 import AtPrefix from './AtPrefix';
 import CenteredSection from './CenteredSection';
 import Form from './Form';
 import Input from './Input';
+import HalfWidth from './HalfWidth';
 import Section from './Section';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
@@ -60,21 +63,26 @@ export function HomePage({
   return (
     <article>
       <Helmet>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="A React.js Boilerplate application homepage"
-        />
+        <title>Matchup Predictor</title>
+        <meta name="description" content="Predict the winnner" />
       </Helmet>
       <div>
         <CenteredSection>
           <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
+            <FormattedMessage {...messages.projectHeader} />
           </H2>
           <p>
-            <FormattedMessage {...messages.startProjectMessage} />
+            <FormattedMessage {...messages.projectMessage} />
           </p>
         </CenteredSection>
+        <Section>
+          <HalfWidth>
+            <Registration />
+          </HalfWidth>
+          <HalfWidth>
+            <Signin />
+          </HalfWidth>
+        </Section>
         <Section>
           <H2>
             <FormattedMessage {...messages.trymeHeader} />
@@ -88,7 +96,7 @@ export function HomePage({
               <Input
                 id="username"
                 type="text"
-                placeholder="mxstbr"
+                placeholder="perlstrom93"
                 value={username}
                 onChange={onChangeUsername}
               />

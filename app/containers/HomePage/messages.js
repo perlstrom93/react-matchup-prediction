@@ -8,14 +8,14 @@ import { defineMessages } from 'react-intl';
 export const scope = 'boilerplate.containers.HomePage';
 
 export default defineMessages({
-  startProjectHeader: {
-    id: `${scope}.start_project.header`,
-    defaultMessage: 'Start your next react project in seconds',
+  projectHeader: {
+    id: `${scope}.project.header`,
+    defaultMessage: 'Predict the Winner!',
   },
-  startProjectMessage: {
-    id: `${scope}.start_project.message`,
+  projectMessage: {
+    id: `${scope}.project.message`,
     defaultMessage:
-      'A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices',
+      'Quick Project to set matchups, where people can predicts the winner, and see who can predicts the winner the most times',
   },
   trymeHeader: {
     id: `${scope}.tryme.header`,

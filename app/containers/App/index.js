@@ -12,7 +12,11 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
+import MatchupPage from 'containers/MatchupPage/Loadable';
+import SetMatchupPage from 'containers/SetMatchupPage/Loadable';
+import ResolveMatchupPage from 'containers/ResolveMatchupPage/Loadable';
+import LeaderboardPage from 'containers/LeaderboardPage/Loadable';
+import HistoryPage from 'containers/HistoryPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -32,15 +36,19 @@ export default function App() {
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - Matchup Prediction"
+        defaultTitle="Matchup Prediction"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="A Matchup Prediction application" />
       </Helmet>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route path="/activeMatchup" component={MatchupPage} />
+        <Route path="/setMatchup" component={SetMatchupPage} />
+        <Route path="/resolveMatchup" component={ResolveMatchupPage} />
+        <Route path="/leaderboard" component={LeaderboardPage} />
+        <Route path="/history" component={HistoryPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
