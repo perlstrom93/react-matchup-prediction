@@ -2,7 +2,7 @@
  * Home Actions
  */
 
-import { CHANGE_USERNAME, CREATE_USERNAME, REGISTRATION_ERROR } from './constants';
+import { CHANGE_USERNAME, CREATE_USERNAME, REGISTRATION_SUCCESS, REGISTRATION_ERROR } from './constants';
 
 /**
  * Changes the input field of the form
@@ -22,6 +22,13 @@ export function createUser() {
   return {
     type: CREATE_USERNAME,
   };
+}
+
+export function registraionSuccess(message) {
+  return {
+    type : REGISTRATION_SUCCESS,
+    message,
+  }
 }
 
 export function registraionError(error) {

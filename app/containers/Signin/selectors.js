@@ -9,10 +9,16 @@ const makeSelectUsername = () =>
     signinState => signinState.username,
   );
 
+const makeSelectSigninSuccess = () =>
+  createSelector(
+    selectSignin,
+    signinState => signinState.success,
+  );
+
 const makeSelectSigninError = () =>
   createSelector(
     selectSignin,
     signinState => signinState.error,
   );
 
-export { selectSignin, makeSelectUsername, makeSelectSigninError };
+export { selectSignin, makeSelectUsername, makeSelectSigninSuccess, makeSelectSigninError };

@@ -9,10 +9,16 @@ const makeSelectUsername = () =>
     registrationState => registrationState.username,
   );
 
+const makeSelectRegistrationSuccess = () =>
+  createSelector(
+    selectRegistration,
+    registraionState => registraionState.success,
+  );
+
 const makeSelectRegistrationError = () =>
   createSelector(
     selectRegistration,
     registraionState => registraionState.error,
   );
 
-export { selectRegistration, makeSelectUsername, makeSelectRegistrationError };
+export { selectRegistration, makeSelectUsername, makeSelectRegistrationSuccess, makeSelectRegistrationError };

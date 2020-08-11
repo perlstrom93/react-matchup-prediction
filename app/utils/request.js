@@ -24,8 +24,7 @@ function checkStatus(response) {
     return response;
   }
 
-  const error = new Error(response.statusText);
-  error.response = response;
+  const error = new Error('I am so sorry, something went wrong, I am a bad dev.');
   throw error;
 }
 
@@ -38,7 +37,13 @@ function checkStatus(response) {
  * @return {object}           The response data
  */
 export default function request(url, options) {
-  return fetch(url, options)
+  return fetch(url, {
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers
+    }
+  })
     .then(checkStatus)
     .then(parseJSON);
 }

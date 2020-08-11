@@ -8,6 +8,7 @@ import { useInjectReducer } from 'utils/injectReducer';
 import { useInjectSaga } from 'utils/injectSaga';
 
 import H3 from 'components/H3';
+import Confirm from 'components/Confirm';
 import Error from 'components/Error';
 
 import Form from './Form';
@@ -15,20 +16,21 @@ import Input from './Input';
 import Button from './Button';
 
 import { changeUsername, signinUser } from './actions';
-import { makeSelectUsername, makeSelectSigninError } from './selectors';
+import { makeSelectUsername, makeSelectSigninSuccess, makeSelectSigninError } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 
 const key = 'signin';
 
-export function Signin({ username, error, onSubmitForm, onChangeUsername }) {
+export function Signin({ username, success, error, onSubmitForm, onChangeUsername }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
   return (
     <article>
       <H3>Sign In</H3>
-      {error ? <Error>I am so sorry, something went wrong, I am a bad dev.</Error> : null}
+      {success ? <Confirm>{success}</Confirm> : null}
+      {error ? <Error>{error}</Error> : null}
       <Form onSubmit={onSubmitForm}>
         <label htmlFor="signinUser">
           Sign in as an existing user:
@@ -48,13 +50,15 @@ export function Signin({ username, error, onSubmitForm, onChangeUsername }) {
 
 Signin.PropTypes = {
   username: PropTypes.string,
-  error: PropTypes.object,
+  success: PropTypes.string,
+  error: PropTypes.string,
   onSubmitForm: PropTypes.func,
   onChangeUsername: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
   username: makeSelectUsername(),
+  success: makeSelectSigninSuccess(),
   error: makeSelectSigninError(),
 });
 

@@ -4,6 +4,7 @@ const HalfWidth = styled.div`
   display: inline-block;
   padding: 0 10px;
   width: 50%;
+  vertical-align: top;
   @media only screen and (max-width: 600px) {
     width: 100%;
   }
