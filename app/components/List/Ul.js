@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const Ul = styled.ul`
+  color: black;
+  background-color: #708090;
   list-style: none;
   margin: 0;
   width: 100%;
