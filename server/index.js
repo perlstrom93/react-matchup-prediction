@@ -1,7 +1,7 @@
 /* eslint consistent-return:0 import/order:0 */
 
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 const logger = require('./logger');
 
